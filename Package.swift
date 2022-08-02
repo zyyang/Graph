@@ -23,7 +23,6 @@
  * THE SOFTWARE.
  */
 
-// swift-tools-version:5.0
 
 import PackageDescription
 
@@ -33,17 +32,15 @@ let package = Package(
         .library(
             name: "Graph",
             targets: ["Graph"]),
-        ],
-    dependencies: [],
+    ],
     targets: [
         .target(
             name: "Graph",
-            dependencies: []),
+            dependencies: [],
+            path: "Sources"),
         .testTarget(
-            name: "GraphTests",
-            dependencies: ["Graph"]),
-        .testTarget(
-            name: "GraphPerformanceTests",
-            dependencies: ["Graph"]),
-        ]
+            name: "Tests",
+            dependencies: ["Graph"],
+            path: "Tests"),
+    ]
 )
